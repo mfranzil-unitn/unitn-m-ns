@@ -1,0 +1,38 @@
+% lst colors
+% THIS FILE MUST BE KEPT IN SYNC WITH THE SLIDE ONE
+
+\definecolor{commentgreen}{RGB}{162, 249, 103}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{weborange}{RGB}{255,165,0}
+\definecolor{frenchplum}{RGB}{254,215,0}
+\definecolor{goodred}{RGB}{233, 38, 95}
+\definecolor{washedyellow}{RGB}{223, 206, 94}
+\definecolor{monoblue}{RGB}{79, 201, 232}
+
+\definecolor{grin}{HTML}{22252E}
+\definecolor{redd}{HTML}{b82200}
+\definecolor{uait}{HTML}{ffffff}
+\definecolor{blec}{HTML}{000000}
+
+% blue code background
+\lstset{
+    escapeinside={(*@}{@*)},
+    frame=single,
+    framerule=0pt,
+    backgroundcolor=\color{grin!70!blec},
+    basicstyle=\ttfamily\color{white},
+    xleftmargin=0pt,
+    xrightmargin=0pt,
+    commentstyle=\color{white},
+    stringstyle=\color{white},
+    mathescape=false,
+    basicstyle=\small\ttfamily\color{white}, % basic font setting
+    keywordstyle = \color{white},
+    keywordstyle = [2]{\color{washedyellow}},
+    keywordstyle = [3]{\color{white}},
+    otherkeywords = {>,<,;,.,-,!,=,~,memcpy,send_request_cgi,encoded,gsub},
+    morekeywords = [2]{>,<,;,.,-,!,=,~},
+    morekeywords = [3]{memcpy,send_request_cgi,encoded,gsub}
+    %emph={int,char,double,float,unsigned,void,bool},
+    %emphstyle={\color{blue}},
+}

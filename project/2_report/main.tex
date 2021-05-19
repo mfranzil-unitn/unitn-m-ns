@@ -1,0 +1,72 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry} % per definizione layout
+
+\usepackage{titlesec}
+\usepackage{graphicx}
+%\usepackage{ifthen}
+
+\usepackage{xcolor}
+\usepackage{listings}
+
+%\usepackage[a-1b]{pdfx}
+\usepackage[pdfa]{hyperref}
+
+\usepackage{url}
+\usepackage{soul}
+
+\usepackage{textcomp}
+
+%\usepackage{tikz}
+
+% file di stile
+\include{lst}
+
+% colore evidenziazione
+\sethlcolor{grin}
+
+% shortcut per evidenziare in nero
+\newcommand{\hltexttt}[1]{\texttt{\hl{{\textcolor{white}{#1}}}}}
+
+% titoli grandi
+\titleformat{\section}{\normalfont\LARGE\bfseries}{\thesection}{1em}{}
+
+% titolo teorema
+\newtheorem{definition}{Definition}
+
+\title{\huge\textbf{Penetration Testing\\Metasploit 1}}
+\author{
+    Group 5 
+    \\
+    Paolo Chistè, Claudio Facchinetti, Matteo Franzil
+}
+
+\begin{document}
+
+\maketitle
+
+% \newpage
+
+\tableofcontents
+
+\newpage
+
+\begingroup
+  
+\input{chapters/0_legal_agreement}
+\input{chapters/1_intro_to_pentesting}
+\input{chapters/2_metasploit}
+\input{chapters/3_getting-started}
+\input{chapters/4_exercise1}
+\input{chapters/5_exercise2}
+\input{chapters/6_exercise3}
+
+\endgroup
+
+\addcontentsline{toc}{section}{References}
+
+\bibliographystyle{IEEEtran-sorted-tt}
+\bibliography{biblio}
+
+\end{document}

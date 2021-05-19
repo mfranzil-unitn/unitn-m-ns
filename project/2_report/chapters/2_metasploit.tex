@@ -1,0 +1,38 @@
+\section{Metasploit}
+\label{sec:metasploit}
+
+The Metasploit Framework is a Ruby-based, modular penetration testing platform that enables you to write, test, and execute exploit code. The Framework contains all necessary tools that may be needed during a penetration test, in all of the six phases described in Section \ref{sec:pentesting}.
+
+Metasploit was first released by H. D. Moore in 2003, and written in the Perl language. After a total rewrite in Ruby a few years later, it was acquired by Rapid7 and integrated into its enterprise solutions as an \textit{open core} project (named Metasploit Pro), although a completely free version named Metasploit Framework was left available for regular users. Over the years, features were increasingly added, leading to a quick and widespread adoption of the Framework within the cyber security community.\cite{online:msf-overview}
+
+As of 2021, Metasploit comes bundled with thousands of exploits and hundreds of payloads, although the amount of modules is vast and is not limited to just raw exploiting. It is highly customizable, with a full-fledged Ruby shell readily available from the console, common console tools such as \texttt{grep} integrated, and editing capabilities for all exploits. Additionally, Metasploit contains tools related to detection evasion, vulnerability assessment, network enumeration, and more.
+
+In this laboratory, we're going to see an overview of the fundamentals of Metasploit, its components, and their basic usage.
+
+\subsection{Modules}
+
+Metasploit is fundamentally made up of \textbf{modules}. A module is a piece of software bound to a specific functionality - and is not just limited to exploiting. Anything that can be done within the Framework is carried out with a modules.
+
+Metasploit comes bundled with a plethora of modules, although custom modules can be created and loaded and unloaded at will. This provides full flexibility to pentesters who wish to write or fine tune their own exploits while taking advantage of the automation that the Framework provides.
+
+Modules are logically divided by types, which dictates the type of action the module performs:
+
+\begin{itemize}
+    \item \textbf{Exploit}: an exploit module, as the name suggests, is a piece of code that targets a specific vulnerability on one or more machines. The objective is to obtain access on the target. Exploit modules include buffer overflow, code injection, and web application exploits. Once an exploit module is executed, a \textit{payload} (see below) is sent to the machine in order to complete the takeover.
+    \item \textbf{Auxiliary}: similar to an exploit module, but without an attached payload. Auxiliary modules provide anything from network scanning to fuzzing to directory listing and more. They are not usually considered exploits \textit{per-se}, but are directly related to the reconniasance phase.
+    \item \textbf{Post-Exploitation}: these modules assist in the homonymous phase, usually enabling further access or information retrieval on a specific targets. Examples of post-exploitation modules include hash dumps and application and service enumerators.
+    \item \textbf{Payload}: they contain the malicious code that is run on a compromised machine after being taken over by an exploit. Usually, they provide a shell, a reverse shell, a \textit{Meterpreter}, or something else.
+    \item \textbf{NOP generator}: produces a series of random bytes, usually used in the context of Intrusion prevention system (\textit{IPS}) evasion and for buffer padding.
+\end{itemize}
+
+\subsection{Interfaces}
+
+The Metasploit Framework comes bundled with a single, \texttt{CLI}-based tool named \texttt{msfconsole}. Its usage and installation is described in Section \ref{sec:getting-started}. 
+
+While \texttt{msfconsole} is extemely powerful, other alternatives have emerged in order to provide a user-friendly GUI to pentesters. For example, Metasploit Pro provides an advanced web-based interface which automates a lot of tasks, such as brute forcing, task chains, and reporting. 
+
+Some open-source GUI solutions for the Metasploit Framework do exist: one of them is \textbf{Armitage}, a Java-based GUI with target visualization, exploit recommendations, and more. Although popular in the past, it has received no update from the maintainer in the last 5 years.
+
+Finally, other related tools have been created for orchestration with Metasploit Framework, both by Rapid7 and third parties. One of them, that will be used in this lab, is \textbf{Metasploitable}, an intentionally vulnerable virtual machine based on an old version of Ubuntu.
+
+\clearpage
